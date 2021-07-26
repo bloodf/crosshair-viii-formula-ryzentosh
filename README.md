@@ -3,20 +3,29 @@
 This OC EFI works with BigSur and future versions of MacOS
 
 ## Machine Setup
-- ASUS Crosshair VIII Formula
-- AMD Ryzen 5950x
-- 128GB G.Skill - Trident Z Neo (F4-4000C18D-64GTZN)
-- Radeon 6900xt Saphire
-- Corsair MP600 Pro 1TB
-- Aorus Gen 4 GP-AG41TB 1TB (Deativated DSDT)
-- Samsung 3 TB Sata 6 HD
-- Samsung 3 TB Sata 6 HD
+
+| [CPU][amd ryzen 9 5950x 3.4 ghz 16-core processor]
+| [Motherboard][asus rog crosshair viii formula atx am4 motherboard]
+| [Memory][g.skill trident z rgb 64 gb (2 x 32 gb) ddr4-3600 cl18 memory]
+| [Memory][g.skill trident z rgb 64 gb (2 x 32 gb) ddr4-3600 cl18 memory]
+| [Storage][seagate barracuda 3 tb 3.5" 7200rpm internal hard drive]
+| [Storage][seagate barracuda 3 tb 3.5" 7200rpm internal hard drive]
+| [Storage][gigabyte aorus gen4 1 tb m.2-2280 nvme solid state drive]
+| [Storage][corsair mp600 pro 1 tb m.2-2280 nvme solid state drive]
+| [Video Card][sapphire radeon rx 6900 xt 16 gb nitro+ se video card]
+| [Case][lian li pc-o11 dynamic atx full tower case]
+| [Power Supply][corsair hxi 1000 w 80+ platinum certified fully modular atx power supply]
+| [Operating System][microsoft windows 10 pro oem 64-bit]
+| [Monitor][samsung odyssey g9 49.0" 5120x1440 240 hz monitor]
+| [Headphones][steelseries arctis pro wireless headset]
+| [Custom][custom watercooler loop (cpu + gpu + o11 distro plate)]
 
 ## Fixes
 
 ### Discord / Krips
 
 Execute this commands on terminal
+
 ```bash
 sudo chmod 644 ./fixes/krisp.plist && cp ./fixes/krips.plist $HOME/Library/LaunchAgents/krisp.plist
 ```
@@ -112,8 +121,9 @@ launchctl start ${AGENT} >/dev/null 2>&1
 
 ### Revert Instructions
 
-* To revert run the following command as required.
-  * To revert step-3
+- To revert run the following command as required.
+  - To revert step-3
+
 ```bash
 files_list=(MMXCore FastCore TextModel libiomp5.dylib)
 for file in $files_list; do
@@ -123,7 +133,9 @@ for file in $files_list; do
     done
 done
 ```
-  * To revert step-4
+
+- To revert step-4
+
 ```bash
 agent_dir="${HOME}/Library/LaunchAgents"
 env_file="${agent_dir}/environment.plist"
@@ -134,4 +146,5 @@ if [[ -f $env_file ]]; then
     rm -rf $env_file
 fi
 ```
+
 2. Reboot macOS
