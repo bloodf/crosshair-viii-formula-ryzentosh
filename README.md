@@ -4,7 +4,7 @@ This OC EFI works with BigSur and future versions of MacOS
 
 ## Machine Setup
 
-```
+```md
 [CPU][amd ryzen 9 5950x 3.4 ghz 16-core processor]
 
 [Motherboard][asus rog crosshair viii formula atx am4 motherboard]
@@ -26,7 +26,7 @@ This OC EFI works with BigSur and future versions of MacOS
 [Custom][custom watercooler loop (cpu + gpu + o11 distro plate)]
 
 [Operating System][microsoft windows 10 pro oem 64-bit]
-[Operating System][apple Big Sur]
+[Operating System][apple big sur]
 
 [Monitor][samsung odyssey g9 49.0" 5120x1440 240 hz monitor]
 
@@ -34,7 +34,7 @@ This OC EFI works with BigSur and future versions of MacOS
 [Headphones][apple air pods max]
 [Headphones][apple air pods pro]
 
-[Mouse][logitech Mx Master 2]
+[Mouse][logitech mx master 2]
 [Mouse][razer deathadder pro wireless]
 
 [Keyboard][razer blackwidow v2]
@@ -43,26 +43,29 @@ This OC EFI works with BigSur and future versions of MacOS
 
 ## Fixes
 
-### Discord 
+### Discord
+
 ```bash
 cd /Applications/Discord.app/Contents/MacOS
 
 echo "MKL_DEBUG_CPU_TYPE=5 ./Discord" > discord_
 ```
 
- Open `/Applications/Discord.app/Contents/Info.plist` and find the `CFBundleExecutable` property and change the value of it to `discord_`
+Open `/Applications/Discord.app/Contents/Info.plist` and find the `CFBundleExecutable` property and change the value of it to `discord_`
 
- ```xml
+```xml
 <key>CFBundleExecutable</key>
 <string>discord_</string>
 ```
 
 ### Krisp
+
 To launch Krisp
 
 ```bash
 launchctl setenv MKL_DEBUG_CPU_TYPE 5 & open -n /Applications/krisp.app
 ```
+
 ### Adobe
 
 Is not working properly with Krisp and Discord. I prefer the Krisp Fix
