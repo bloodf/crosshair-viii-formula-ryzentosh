@@ -58,7 +58,11 @@ echo "MKL_DEBUG_CPU_TYPE=5 ./Discord" > discord_
 ```
 
 ### Krisp
+To launch Krisp
 
+```bash
+launchctl setenv MKL_DEBUG_CPU_TYPE 5 & open -n /Applications/krisp.app
+```
 ### Adobe
 
 Is not working properly with Krisp and Discord. I prefer the Krisp Fix
