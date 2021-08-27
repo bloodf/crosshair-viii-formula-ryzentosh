@@ -43,33 +43,21 @@ This OC EFI works with BigSur and future versions of MacOS
 
 ## Fixes
 
-### Discord / Krips
-
-Execute this commands on terminal
-
-1 - Define the CHMOD of the file
-
+### Discord 
 ```bash
-$ sudo chmod 644 ./fixes/environment.plist
+cd /Applications/Discord.app/Contents/MacOS
+
+echo "MKL_DEBUG_CPU_TYPE=5 ./Discord" > discord_
 ```
 
-2 - Copy the file to the launch agents
+ Open `/Applications/Discord.app/Contents/Info.plist` and find the `CFBundleExecutable` property and change the value of it to `discord_`
 
-```bash
-$ cp ./fixes/environment.plist $HOME/Library/LaunchAgents/environment.plist
+ ```xml
+<key>CFBundleExecutable</key>
+<string>discord_</string>
 ```
 
-3 - Load the copied file
-
-```bash
-$ launchctl load $HOME/Library/LaunchAgents/environment.plist >/dev/null 2>&1
-```
-
-4 - Start the copied file
-
-```bash
-$ launchctl start $HOME/Library/LaunchAgents/environment.plist >/dev/null 2>&1
-```
+### Krisp
 
 ### Adobe
 
